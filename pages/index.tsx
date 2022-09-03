@@ -1,8 +1,8 @@
-import React, { FormEvent, useState } from "react";
-import { SearchResults } from "./components/SearchResults";
+import React, { FormEvent, useState } from 'react';
+import { SearchResults } from './components/SearchResults';
 
 export default function Home() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
 
   async function handleSearch(event: FormEvent) {
@@ -22,11 +22,11 @@ export default function Home() {
 
       <form onSubmit={handleSearch}>
         <input
-          type="text"
+          type='text'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button type="submit">Buscar</button>
+        <button type='submit'>Buscar</button>
       </form>
 
       <SearchResults results={results} />

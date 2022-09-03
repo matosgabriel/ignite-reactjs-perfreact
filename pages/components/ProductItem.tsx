@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 
 interface ProductItemProps {
   product: { id: number; price: number; title: string };
