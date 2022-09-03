@@ -1,13 +1,20 @@
 import { memo } from 'react';
 
 interface ProductItemProps {
-  product: { id: number; price: number; title: string };
+  product: { id: number; price: number; title: string; formattedPrice: string };
+  handleAddToWishList: (id: number) => Promise<void>;
 }
 
-function ProductItemComponent({ product }: ProductItemProps) {
+function ProductItemComponent({
+  product,
+  handleAddToWishList,
+}: ProductItemProps) {
   return (
     <div>
-      {product.title} - <strong>{product.price}</strong>
+      {product.title} - <strong>{product.formattedPrice}</strong>
+      <button onClick={() => handleAddToWishList(product.id)}>
+        Adicionar a lista de favoritos
+      </button>
     </div>
   );
 }
